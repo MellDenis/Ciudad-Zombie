@@ -22,9 +22,23 @@ var Juego = {
   obstaculosCarretera: [
     /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
     de ejemplo, pero podras agregar muchos mas. */
-    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1)
-
+    new Obstaculo('imagenes/valla_horizontal.png', 165, 100, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 135, 100, 30, 30, 1),
+    new Obstaculo('imagenes/auto_verde_abajo.png',180, 240 , 15, 30, 2),
+    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png',85, 457 , 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 105, 480, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 130, 480, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png',400, 410 , 30, 30, 2),
+    new Obstaculo('imagenes/auto_verde_abajo.png',573, 470 , 15, 30, 2),
+    new Obstaculo('imagenes/auto_verde_derecha.png',547, 494 , 30, 15, 2),
+    new Obstaculo('imagenes/bache.png',268,70, 30, 30, 2), 
+    new Obstaculo('imagenes/auto_verde_derecha.png',520, 80, 30, 15, 2),
+    new Obstaculo('imagenes/valla_vertical.png',865, 110 , 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png',865, 90 , 30, 30, 2),
+    new Obstaculo('imagenes/bache.png',790, 410 , 30, 30, 2),
   ],
+
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
    Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
    que son invisibles. No tenes que preocuparte por ellos.*/
@@ -141,7 +155,6 @@ Juego.dibujar = function() {
   Dibujante.borrarAreaDeJuego();
   //Se pinta la imagen de fondo segun el estado del juego
   this.dibujarFondo();
-
 
   /* Aca hay que agregar la logica para poder dibujar al jugador principal
   utilizando al dibujante y los metodos que nos brinda.
