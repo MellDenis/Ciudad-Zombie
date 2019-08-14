@@ -8,7 +8,6 @@ texto COMPLETAR que deben completarse segun lo indique la consigna.
 El objeto Juego contiene mucho codigo. Tomate tu tiempo para leerlo tranquilo
 y entender que es lo que hace en cada una de sus partes. */
 
-//var dibujante = Object.create(Dibujante);
 
 var Juego = {
   // Aca se configura el tamanio del canvas del juego
@@ -24,18 +23,18 @@ var Juego = {
     de ejemplo, pero podras agregar muchos mas. */
     new Obstaculo('imagenes/valla_horizontal.png', 165, 100, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 135, 100, 30, 30, 1),
-    new Obstaculo('imagenes/auto_verde_abajo.png',180, 240 , 15, 30, 2),
+    new Obstaculo('imagenes/auto_verde_abajo.png',180, 240 , 15, 30, 3),
     new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1),
     new Obstaculo('imagenes/valla_vertical.png',85, 457 , 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 105, 480, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 130, 480, 30, 30, 1),
     new Obstaculo('imagenes/bache.png',400, 410 , 30, 30, 2),
-    new Obstaculo('imagenes/auto_verde_abajo.png',573, 470 , 15, 30, 2),
-    new Obstaculo('imagenes/auto_verde_derecha.png',547, 494 , 30, 15, 2),
+    new Obstaculo('imagenes/auto_verde_abajo.png',573, 470 , 15, 30, 3),
+    new Obstaculo('imagenes/auto_verde_derecha.png',547, 494 , 30, 15, 3),
     new Obstaculo('imagenes/bache.png',268,70, 30, 30, 2), 
-    new Obstaculo('imagenes/auto_verde_derecha.png',520, 80, 30, 15, 2),
+    new Obstaculo('imagenes/auto_verde_derecha.png',520, 80, 30, 15, 3),
     new Obstaculo('imagenes/valla_vertical.png',865, 110 , 30, 30, 1),
-    new Obstaculo('imagenes/valla_vertical.png',865, 90 , 30, 30, 2),
+    new Obstaculo('imagenes/valla_vertical.png',865, 90 , 30, 30, 1),
     new Obstaculo('imagenes/bache.png',790, 410 , 30, 30, 2),
   ],
 
@@ -207,8 +206,7 @@ Juego.calcularAtaques = function() {
 };
 
 
-
-/* Aca se chequea si el jugador se peude mover a la posicion destino.
+/* Aca se chequea si el jugador se puede mover a la posicion destino.
  Es decir, que no haya obstaculos que se interpongan. De ser asi, no podra moverse */
 Juego.chequearColisiones = function(x, y) {
   var puedeMoverse = true
@@ -223,7 +221,7 @@ Juego.chequearColisiones = function(x, y) {
   return puedeMoverse
 };
 
-/* Este metodo chequea si los elementos 1 y 2 si cruzan en x e y
+/* Este metodo chequea si los elementos 1 y 2 si cruzan en x e y,
  x e y representan la coordenada a la cual se quiere mover el elemento2*/
 Juego.intersecan = function(elemento1, elemento2, x, y) {
   var izquierda1 = elemento1.x
