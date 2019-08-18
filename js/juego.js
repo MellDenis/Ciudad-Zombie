@@ -87,7 +87,9 @@ Juego.iniciarRecursos = function() {
     'imagenes/auto_rojo_derecha.png',
     'imagenes/auto_rojo_izquierda.png',
     'imagenes/auto_verde_abajo.png',
-    'imagenes/auto_verde_derecha.png'
+    'imagenes/auto_verde_derecha.png',
+    'imagenes/star.png',
+    'imagenes/finish.png'
   ]);
   Resources.onReady(this.comenzar.bind(Juego));
 };
@@ -155,11 +157,12 @@ Juego.dibujar = function() {
   //Se pinta la imagen de fondo segun el estado del juego
   this.dibujarFondo();
 
-  /* Aca hay que agregar la logica para poder dibujar al jugador principal
-  utilizando al dibujante y los metodos que nos brinda.
-  "Dibujante dibuja al jugador" */
-
+  /*"Dibujante dibuja al jugador" */
   Dibujante.dibujarEntidad(Jugador);
+
+  /*Se colocar una imagen en la salida y llegada */
+  Dibujante.dibujarImagen('imagenes/star.png',68,24,130,36);
+  Dibujante.dibujarImagen('imagenes/finish.png',758,527,130,36);
 
   // Se recorren los obstaculos de la carretera pintandolos
   this.obstaculosCarretera.forEach(function(obstaculo) {
@@ -178,6 +181,8 @@ Juego.dibujar = function() {
     var x = tamanio * i
     Dibujante.dibujarRectangulo('red', x, 0, tamanio, 8);
   }
+
+
 };
 
 /* Recorre los enemigos haciendo que se muevan. De la misma forma que hicimos
